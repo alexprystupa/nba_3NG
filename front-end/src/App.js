@@ -3,6 +3,8 @@ import Header from './components/Header.js'
 import Players from './components/Players.js'
 import AddPlayer from './components/AddPlayer.js'
 import { FaTasks } from 'react-icons/fa'
+import Table from './components/Table.js'
+import './Table.css'
 
 function App() {
   const [players, setPlayers] = useState([
@@ -40,12 +42,12 @@ function App() {
         year: '2020-21',
         viewStats: false,
     },
-])
+]);
 
 // Delete Player
 const deletePlayer = (id) => {
   setPlayers(players.filter((player) =>  player.id !== id))
-}
+};
 
 //Add Player
 const AddPlayerData = (nbaPlayer) => {
@@ -53,21 +55,25 @@ const AddPlayerData = (nbaPlayer) => {
   const id = Math.floor(Math.random() * 10000) + 1
   const newPlayer = {id, ...nbaPlayer}
   setPlayers([...players, newPlayer])
-}
+};
 
 // Toggle Player Status
 const togglePlayer = (id) => {
-  setPlayers(players.map((player) => player.id === id ? 
-  {...player, viewStats: !player.viewStats} : player))
-}
+  // Setting so only 1 Player can be highlighted at a time
+  setPlayers(players.map((player) => player.id !== id ? 
+  {...player, viewStats: false} : {...player, viewStats: !player.viewStats}))
+};
 
   return (
-    <div className="container">
-      <Header />
-      <AddPlayer onAddPlayerData = {AddPlayerData}/>
-      {players.length > 0 ? (<Players nbaPlayers={players}
-      onDelete={deletePlayer} onToggle = {togglePlayer} />) 
+    <div>
+      <div className="container">
+        <Header />
+        <AddPlayer onAddPlayerData = {AddPlayerData}/>
+        {players.length > 0 ? (<Players nbaPlayers={players}
+        onDelete={deletePlayer} onToggle = {togglePlayer} />) 
         : ('Add Players Please')} 
+      </div>
+      <Table />
     </div>
   );
 }

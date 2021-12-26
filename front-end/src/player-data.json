@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "Player": "RJ Barrett",
+        "Age": "21",
+        "Position": "SG",
+        "PPG": "17",
+        "RPG": "6"
+    },
+
+    {
+        "id": 1,
+        "Player": "Immanuel Quickley",
+        "Age": "22",
+        "Position": "PG",
+        "PPG": "11",
+        "RPG": "3"
+    },
+
+    {
+        "id": 1,
+        "Player": "Obi Toppin",
+        "Age": "23",
+        "Position": "PF",
+        "PPG": "10",
+        "RPG": "6"
+    },
+
+    {
+        "id": 1,
+        "Player": "Julius Randle",
+        "Age": "27",
+        "Position": "SF",
+        "PPG": "21",
+        "RPG": "8"
+    },
+
+    {
+        "id": 1,
+        "Player": "Mitchell Robinson",
+        "Age": "23",
+        "Position": "C",
+        "PPG": "9",
+        "RPG": "10"
+    }
+]
